@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="15" tilewidth="32" tileheight="32" backgroundcolor="#55aaff" nextobjectid="6">
+ <properties>
+  <property name="helicopter" value="assets/helicopter.png"/>
+ </properties>
+ <tileset firstgid="1" name="blocks1" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
+  <image source="blocks1.png" width="614" height="376"/>
+ </tileset>
+ <tileset firstgid="199" name="blocks2" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
+  <image source="blocks2.png" width="614" height="376"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="60" height="15">
+  <data encoding="base64" compression="zlib">
+   eJztkmkKwjAUhBsUvIHL5dz+9wzuJ6j1eq4XcP3tBCmGkLwkJqmtOPBhaSXzJvOSpN7qgwEYghEYf3Wa+inm/VFnu/qW0fMBHMHJ4FG1nft0nhu4g0ecsSqpFnP7f1ld+/pswQ7shXddZO1p8oq7HkoTMAUzMAcLsASrgB6FzuACrpK3zjfWrmdgLfzmgc8v1ECPTanLVEKW665zmTqk8obqv8NetNn7mYvKS+26SVQmU7++vVN3pstrumfbDnPF7C55VT42knOlmvc6X85G853q0Devag6bnf+lvFSef96webMkbl7VOU+KWa4h
+  </data>
+ </layer>
+</map>

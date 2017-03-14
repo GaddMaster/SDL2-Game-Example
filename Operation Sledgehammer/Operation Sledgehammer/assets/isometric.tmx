@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="staggered" renderorder="left-up" width="28" height="113" tilewidth="48" tileheight="24" staggeraxis="y" staggerindex="odd" nextobjectid="1">
+ <tileset firstgid="1" name="cliffs_1" tilewidth="96" tileheight="109" tilecount="36" columns="3">
+  <tileoffset x="-25" y="25"/>
+  <image source="../RTS_Graphic_Collection_3307/terrain/cliffs_1.png" width="288" height="1308"/>
+  <tile id="5">
+   <properties>
+    <property name="iso" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="37" name="background_isometric_48x24" tilewidth="48" tileheight="24" tilecount="4" columns="2">
+  <image source="../RTS_Graphic_Collection_3307/terrain/background_isometric_48x24.png" width="96" height="48"/>
+ </tileset>
+ <tileset firstgid="41" name="terrain" tilewidth="194" tileheight="147" tilecount="1" columns="0">
+  <tile id="0">
+   <image width="194" height="147" source="../RTS_Graphic_Collection_3307/terrain/background.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="42" name="ramp_1" tilewidth="192" tileheight="156" tilecount="2" columns="1">
+  <tileoffset x="-1" y="36"/>
+  <image source="../RTS_Graphic_Collection_3307/terrain/ramp_1.png" width="192" height="312"/>
+ </tileset>
+ <tileset firstgid="44" name="ramp_2" tilewidth="240" tileheight="150" tilecount="2" columns="1">
+  <tileoffset x="0" y="54"/>
+  <image source="../RTS_Graphic_Collection_3307/terrain/ramp_2.png" width="240" height="300"/>
+ </tileset>
+ <tileset firstgid="46" name="wall" tilewidth="100" tileheight="100" tilecount="9" columns="3">
+  <tileoffset x="-25" y="40"/>
+  <image source="../RTS_Graphic_Collection_3307/terrain/wall.png" width="300" height="300"/>
+ </tileset>
+ <layer name="terrain" width="28" height="113">
+  <data encoding="base64" compression="zlib">
+   eJzt10EKgDAMBEBfU/D/H/RiMRdRUxpUZi6Sg11aZKnLAjDHWjwD/IX+BMjRn8DbtcL1n2Rl+7BdzGfvj2ghZ/Z5xryYK+87edWZ9jc3r3p/d/JG7pNtn2Pe7P7sz8pvNGYDdP7fAXL0J0CO/gTI0Z9w2AAFehLa
+  </data>
+ </layer>
+ <layer name="wall" width="28" height="113">
+  <data encoding="base64" compression="zlib">
+   eJzt19EOgjAMheE9kYD6/s+mJJIsTbuBO92F/l9iYtDsMGg3KAUAAAAAMGqdmHV7f5bJeb+Y5eVlXlevRjLzojrJyDyuozf2MzHPy1T3R6tGWvNW5dXjt+b9jXtwfHHOQzXHaByvThSZ3hgze+PIi8ZXZ/ZqRH0fz9SJ6j62eqP2EOTtorXLHlftW1dqVcVbP6NzUbO1mr3/2/FVdWJ5c8meW1ZNRrx9cNTZ52hFXt1XayNbNbe6r/bvW4n7XZVVPjmHqNdHRc8RNjNznbS/qeu/lzkzL3Pd8mStJVn1f8U/vd9mmbF3W1v/LwAAAAAAAECaF86FFGs=
+  </data>
+ </layer>
+</map>
