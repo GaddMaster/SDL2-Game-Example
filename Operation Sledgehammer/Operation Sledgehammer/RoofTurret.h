@@ -1,13 +1,5 @@
-//
-//  RoofTurret.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 30/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef SDL_Game_Programming_Book_RoofTurret_h
-#define SDL_Game_Programming_Book_RoofTurret_h
+#ifndef ROOF_TURRET_H
+#define ROOF_TURRET_H
 
 #include "Turret.h"
 
@@ -19,8 +11,7 @@ public:
     
     virtual void draw()
     {
-        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(),
-                                              m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer(), m_angle, m_alpha, SDL_FLIP_VERTICAL);
+        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer(), m_angle, m_alpha, SDL_FLIP_VERTICAL);
     }
     
     virtual void update()
@@ -56,4 +47,4 @@ class RoofTurretCreator : public BaseCreator
     }
 };
 
-#endif
+#endif//DEFINED ROOF_TURRET_H

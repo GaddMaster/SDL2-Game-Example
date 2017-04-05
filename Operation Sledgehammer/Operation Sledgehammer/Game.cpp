@@ -111,6 +111,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
     TheGameObjectFactory::Instance()->registerType("Eskeletor", new EskeletorCreator());
     TheGameObjectFactory::Instance()->registerType("Level1Boss", new Level1BossCreator());
+
+
     
     //START THE MENU STATE - OUR VERY FIRST STATE
     m_pGameStateMachine = new GameStateMachine();

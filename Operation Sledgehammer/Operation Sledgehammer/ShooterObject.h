@@ -1,13 +1,5 @@
-//
-//  SDLGameObject.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 19/01/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef __SDL_Game_Programming_Book__SDLGameObject__
-#define __SDL_Game_Programming_Book__SDLGameObject__
+#ifndef SHOOTER_OBJECT_H
+#define SHOOTER_OBJECT_H
 
 #include <SDL.h>
 #include "GameObject.h"
@@ -17,23 +9,17 @@ class ShooterObject : public GameObject
 public:
     
     virtual ~ShooterObject() {}
-
     virtual void load(std::unique_ptr<LoaderParams> const &pParams);
-    
     virtual void draw();
     virtual void update();
-    
     virtual void clean() {}
     virtual void collision() {}
-    
     virtual std::string type() { return "SDLGameObject"; }
     
 protected:
     
     ShooterObject();
-    
     void doDyingAnimation();
-    
     int m_bulletFiringSpeed;
     int m_bulletCounter;
     int m_moveSpeed;
@@ -46,4 +32,4 @@ protected:
     bool m_bPlayedDeathSound;
 };
 
-#endif /* defined(__SDL_Game_Programming_Book__SDLGameObject__) */
+#endif//DEFINED SHOOTER_OBJECT_H

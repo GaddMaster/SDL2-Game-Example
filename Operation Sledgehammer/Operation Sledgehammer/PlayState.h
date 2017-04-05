@@ -14,11 +14,9 @@ class PlayState : public GameState
 {
 	public:
     
-		virtual ~PlayState() { delete pLevel; }
-    
+		virtual ~PlayState(){delete pLevel;};
 		virtual void update();
 		virtual void render();
-    
 		virtual bool onEnter();
 		virtual bool onExit();
     

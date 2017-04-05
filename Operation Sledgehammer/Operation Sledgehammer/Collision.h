@@ -1,13 +1,5 @@
-//
-//  Header.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 28/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef SDL_Game_Programming_Book_Header_h
-#define SDL_Game_Programming_Book_Header_h
+#ifndef COLLISION_H
+#define COLLISION_H
 
 #include "SDL.h"
 #include "Vector2D.h"
@@ -38,4 +30,4 @@ static bool RectRect(SDL_Rect* A, SDL_Rect* B)
     return true;
 }
 
-#endif
+#endif//DEFINED COLLISION_H

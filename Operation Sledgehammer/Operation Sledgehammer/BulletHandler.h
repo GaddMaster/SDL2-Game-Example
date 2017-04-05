@@ -1,13 +1,5 @@
-//
-//  BulletHandler.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 28/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef __SDL_Game_Programming_Book__BulletHandler__
-#define __SDL_Game_Programming_Book__BulletHandler__
+#ifndef BULLET_HANDLER_H
+#define BULLET_HANDLER_H
 
 #include <iostream>
 #include <vector>
@@ -48,11 +40,11 @@ private:
     
     static BulletHandler* s_pInstance;
     
-    // in play bullets
+    //IN PLAY BULLETS
     std::vector<PlayerBullet*> m_playerBullets;
     std::vector<EnemyBullet*> m_enemyBullets;
 };
 
 typedef BulletHandler TheBulletHandler;
 
-#endif /* defined(__SDL_Game_Programming_Book__BulletHandler__) */
+#endif//DEFINED BULLET_HANDLER_H

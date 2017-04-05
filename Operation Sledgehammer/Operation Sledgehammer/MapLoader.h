@@ -1,13 +1,5 @@
-//
-//  MapLoader.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 09/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef __SDL_Game_Programming_Book__MapLoader__
-#define __SDL_Game_Programming_Book__MapLoader__
+#ifndef MAP_LOADER_H
+#define MAP_LOADER_H
 
 #include <iostream>
 //#include "Map.h"
@@ -15,15 +7,15 @@
 
 class MapLoader
 {
-public:
+	public:
     
-    //Map* loadMap(const char* mapFile);
+		//Map* loadMap(const char* mapFile);
     
-private:
+	private:
     
-    //void parseTextures(TiXmlElement* pTilesetRoot, Map::Tilesets *pTextureIDs);
-    //void parseLayer(std::vector<int> layerData, Map::GridIDs *pLayers);
+		//void parseTextures(TiXmlElement* pTilesetRoot, Map::Tilesets *pTextureIDs);
+		//void parseLayer(std::vector<int> layerData, Map::GridIDs *pLayers);
     
 };
 
-#endif /* defined(__SDL_Game_Programming_Book__MapLoader__) */
+#endif//DEFINED MAP_LOADER_H

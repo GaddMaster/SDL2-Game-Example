@@ -21,7 +21,6 @@ class Game
 			return s_pInstance;
 		}
 
-    
 		bool init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);//OUR INITIALIZATION FUNCTION
     
 		void render();//RENDER FUNCTION

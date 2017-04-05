@@ -1,13 +1,5 @@
-//
-//  MenuState.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 26/02/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef SDL_Game_Programming_Book_MenuState_h
-#define SDL_Game_Programming_Book_MenuState_h
+#ifndef MENU_STATE_H
+#define MENU_STATE_H
 
 #include "GameState.h"
 
@@ -26,4 +18,4 @@ protected:
 };
 
 
-#endif
+#endif//DEFINED MENU_STATE_H

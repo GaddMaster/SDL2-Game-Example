@@ -1,13 +1,5 @@
-//
-//  StateParser.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 24/02/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef __SDL_Game_Programming_Book__StateParser__
-#define __SDL_Game_Programming_Book__StateParser__
+#ifndef STATE_PARSER_H
+#define STATE_PARSER_H
 
 #include <iostream>
 #include <vector>
@@ -17,17 +9,17 @@ class GameObject;
 
 class StateParser
 {
-public:
+	public:
     
-    StateParser() {}
-    ~StateParser() {}
+		StateParser() {}
+		~StateParser() {}
     
-    bool parseState(const char* stateFile, std::string stateID, std::vector<GameObject*> *pObjects, std::vector<std::string> *pTextureIDs);
+		bool parseState(const char* stateFile, std::string stateID, std::vector<GameObject*> *pObjects, std::vector<std::string> *pTextureIDs);
     
-private:
+	private:
     
-    void parseObjects(TiXmlElement* pStateRoot, std::vector<GameObject*> *pObjects);
-    void parseTextures(TiXmlElement* pStateRoot, std::vector<std::string> *pTextureIDs);
+		void parseObjects(TiXmlElement* pStateRoot, std::vector<GameObject*> *pObjects);
+		void parseTextures(TiXmlElement* pStateRoot, std::vector<std::string> *pTextureIDs);
 };
 
-#endif /* defined(__SDL_Game_Programming_Book__StateParser__) */
+#endif//DEFINED STATE_PARSER_H

@@ -1,22 +1,3 @@
-/*
-www.sourceforge.net/projects/tinyxml
-This software is provided 'as-is', without any express or implied
-warranty. In no event will the authors be held liable for any
-damages arising from the use of this software.
-Permission is granted to anyone to use this software for any
-purpose, including commercial applications, and to alter it and
-redistribute it freely, subject to the following restrictions:
-1. The origin of this software must not be misrepresented; you must
-not claim that you wrote the original software. If you use this
-software in a product, an acknowledgment in the product documentation
-would be appreciated but is not required.
-2. Altered source versions must be plainly marked as such, and
-must not be misrepresented as being the original software.
-3. This notice may not be removed or altered from any source
-distribution.
-*/
-
-
 #ifndef TIXML_USE_STL
 
 #ifndef TIXML_STRING_INCLUDED
@@ -25,10 +6,6 @@ distribution.
 #include <assert.h>
 #include <string.h>
 
-/*	The support for explicit isn't that universal, and it isn't really
-	required - it is used to check that the TiXmlString class isn't incorrectly
-	used. Be nice to old compilers and macro it here:
-*/
 #if defined(_MSC_VER) && (_MSC_VER >= 1200 )
 	// Microsoft visual studio, version 6 and higher.
 	#define TIXML_EXPLICIT explicit
@@ -39,14 +16,6 @@ distribution.
 	#define TIXML_EXPLICIT
 #endif
 
-
-/*
-   TiXmlString is an emulation of a subset of the std::string template.
-   Its purpose is to allow compiling TinyXML on compilers with no or poor STL support.
-   Only the member functions relevant to the TinyXML project have been implemented.
-   The buffer allocation is made by a simplistic power of 2 like mechanism : if we increase
-   a string and there's no more room, we allocate a buffer twice as big as we need.
-*/
 class TiXmlString
 {
   public :

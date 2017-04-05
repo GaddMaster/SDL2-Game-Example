@@ -1,11 +1,3 @@
-//
-//  IGameState.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 09/02/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
 #ifndef GAME_STATE_H
 #define GAME_STATE_H
 
@@ -18,7 +10,7 @@ class GameState
 		
 		virtual ~GameState() {}
     
-		//PURE VIRTUAL FUNCTIONS MUST BE IMPLEMENTED
+		//PURE VIRTUAL FUNCTIONS MUST BE IMPLEMENTED IN ALL INHERITED CLASSES
 		virtual void update() = 0;
 		virtual void render() = 0;
 		virtual bool onEnter() = 0;
@@ -26,14 +18,11 @@ class GameState
 		virtual std::string getStateID() const = 0;
 
 		//RESUME CURRENT GAME STATE
-		virtual void resume() {}
+		virtual void resume(){}
     
 	protected://///////////////////////////////////////
     
-		GameState() : m_loadingComplete(false), m_exiting(false)
-		{
-        
-		}
+		GameState() : m_loadingComplete(false), m_exiting(false){}
 		bool m_loadingComplete;
 		bool m_exiting;
 		

@@ -1,13 +1,5 @@
-//
-//  PauseState.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 16/02/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef __SDL_Game_Programming_Book__PauseState__
-#define __SDL_Game_Programming_Book__PauseState__
+#ifndef PAUSE_STATE_H
+#define PAUSE_STATE_H
 
 #include <iostream>
 #include <vector>
@@ -42,4 +34,4 @@ private:
 };
 
 
-#endif /* defined(__SDL_Game_Programming_Book__PauseState__) */
+#endif//DEFINED PAUSE_STATE_H

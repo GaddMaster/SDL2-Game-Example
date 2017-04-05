@@ -14,15 +14,11 @@ void PlayState::update()
 {
     if(m_loadingComplete && !m_exiting)
     {
+		//IF PAUSE IS PRESSED CONSTRUCT A PAUSE STATE
         if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE))
         {
             TheGame::Instance()->getStateMachine()->pushState(new PauseState());
         }
-        
-//        if(TheInputHandler::Instance()->getButtonState(0, 8))
-//        {
-//            TheGame::Instance()->getStateMachine()->pushState(new PauseState());
-//        }
         
         TheBulletHandler::Instance()->updateBullets();
         

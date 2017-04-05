@@ -1,13 +1,5 @@
-//
-//  ShotGlider.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 30/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
-
-#ifndef SDL_Game_Programming_Book_ShotGlider_h
-#define SDL_Game_Programming_Book_ShotGlider_h
+#ifndef SHOT_GLIDER_H
+#define SHOT_GLIDER_H
 
 #include "Glider.h"
 
@@ -61,4 +53,4 @@ class ShotGliderCreator : public BaseCreator
 };
 
 
-#endif
+#endif//DEFINED SHOT_GLIDER_H
