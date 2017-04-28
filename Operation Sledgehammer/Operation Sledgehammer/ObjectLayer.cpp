@@ -1,10 +1,3 @@
-//
-//  ObjectLayer.cpp
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 10/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
 
 #include "ObjectLayer.h"
 #include "GameObject.h"
@@ -25,7 +18,10 @@ void ObjectLayer::update(Level* pLevel)
 {
     m_collisionManager.checkPlayerEnemyBulletCollision(pLevel->getPlayer());
     m_collisionManager.checkEnemyPlayerBulletCollision((const std::vector<GameObject*>&)m_gameObjects);
+	m_collisionManager.checkEnemyPlayerRocketCollision((const std::vector<GameObject*>&)m_gameObjects);
     m_collisionManager.checkPlayerEnemyCollision(pLevel->getPlayer(), (const std::vector<GameObject*>&)m_gameObjects);
+	//m_collisionManager.checkPlayerCrateCollision(pLevel->getPlayer(), (const std::vector<GameObject*>&)m_gameObjects);
+
 
 	if(pLevel->getPlayer()->getPosition().getX() + pLevel->getPlayer()->getWidth() < TheGame::Instance()->getGameWidth())
 	{
@@ -37,6 +33,9 @@ void ObjectLayer::update(Level* pLevel)
     {
         for(std::vector<GameObject*>::iterator it = m_gameObjects.begin(); it != m_gameObjects.end();)// < m_gameObjects.size(); i++)
         {
+			//if ((*it)->type() == "Crate")
+				//std::cout << "CRATE" << std::endl;
+
             if((*it)->getPosition().getX() <= TheGame::Instance()->getGameWidth())
             {
                 (*it)->setUpdating(true);
@@ -49,12 +48,16 @@ void ObjectLayer::update(Level* pLevel)
                     (*it)->setUpdating(false);
                     (*it)->scroll(TheGame::Instance()->getScrollSpeed());
                 }
+				else if ((*it)->type() == std::string("Crate"))
+				{
+
+				}
                 else
                 {
                     (*it)->update();
                 }
             }
-            
+
             // check if dead or off screen
             if((*it)->getPosition().getX() < (0 - (*it)->getWidth()) || (*it)->getPosition().getY() > (TheGame::Instance()->getGameHeight()) || ((*it)->dead()))
             {

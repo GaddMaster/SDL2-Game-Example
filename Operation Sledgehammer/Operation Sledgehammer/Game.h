@@ -4,6 +4,7 @@
 #include "SDL.h"
 #include "GameStateMachine.h"
 #include <vector>
+//#include <ctime>
 
 class Game
 {
@@ -56,6 +57,13 @@ class Game
 		void changingState(bool cs) { m_bChangingState = cs; }
     
 		std::vector<std::string> getLevelFiles() { return m_levelFiles; }
+
+		int getSDLTicks() { return SDL_GetTicks(); }
+
+		void setCurrentWeapons(int weapon, int ammo) { m_weapon = weapon; m_ammo = ammo; }
+		int getCurrentWeapons() { return m_weapon; }
+		void setAmmo(int ammo) { m_ammo = ammo; }
+		int getAmmo() { return m_ammo; }
     
 	private://///////////////////////////////////////
 
@@ -74,6 +82,9 @@ class Game
 		float m_scrollSpeed;//SCROLL SPEED
     
 		int m_playerLives;//AMOUNT OF LIVES PLAYER HAS
+
+		int m_weapon;//PLAYERS CURRENT WEAPON
+		int m_ammo;//Ammmo
     
 		int m_currentLevel;//CURRENTLY RUNNING LEVEL
 		int m_nextLevel;

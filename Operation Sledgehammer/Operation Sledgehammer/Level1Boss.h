@@ -1,10 +1,3 @@
-//
-//  Level1Boss.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 31/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
 
 #ifndef SDL_Game_Programming_Book_Level1Boss_h
 #define SDL_Game_Programming_Book_Level1Boss_h
@@ -36,7 +29,7 @@ public:
         m_velocity.setY(-m_moveSpeed);
     }
     
-    virtual void collision()
+    virtual void collision(int damage)
     {
         if(m_entered)
         {
@@ -88,11 +81,11 @@ public:
 
                 if(m_bulletCounter == m_bulletFiringSpeed)
                 {
-                    TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 15, 16, 16, "bullet2", 1, Vector2D(-10, 0));
-                    TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 25, 16, 16, "bullet2", 1, Vector2D(-10, 0));
+                    TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 15, 16, 16, "bullet2", 1, Vector2D(-10, 0), 0);
+                    TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 25, 16, 16, "bullet2", 1, Vector2D(-10, 0), 0);
                     
-                    TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 200, 16, 16, "bullet2", 1, Vector2D(-10, 0));
-                    TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 215, 16, 16, "bullet2", 1, Vector2D(-10, 0));
+                    TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 200, 16, 16, "bullet2", 1, Vector2D(-10, 0), 0);
+                    TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 215, 16, 16, "bullet2", 1, Vector2D(-10, 0), 0);
                     
                     m_bulletCounter = 0;
                 }

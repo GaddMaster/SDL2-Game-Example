@@ -55,6 +55,12 @@
     <Filter Include="Source Files\Parser">
       <UniqueIdentifier>{89ed6afa-d320-4cbc-ae34-876601ad1620}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Level">
+      <UniqueIdentifier>{c8cca743-1184-42b9-affa-678e0e985a01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Level">
+      <UniqueIdentifier>{4ad9f7b6-8547-486e-9149-ed4b7ba6c410}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameOverState.cpp">
@@ -95,9 +101,6 @@
     </ClCompile>
     <ClCompile Include="IsometricExample.cpp">
       <Filter>Source Files\Game States</Filter>
-    </ClCompile>
-    <ClCompile Include="Level.cpp">
-      <Filter>Source Files\Layer</Filter>
     </ClCompile>
     <ClCompile Include="tinystr.cpp">
       <Filter>Source Files\Parser</Filter>
@@ -146,6 +149,21 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketHandler.cpp">
+      <Filter>Source Files\Singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="Rocket.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Turret.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Crate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files\Level</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -251,9 +269,6 @@
     <ClInclude Include="MapLoader.h">
       <Filter>Header Files\Parser</Filter>
     </ClInclude>
-    <ClInclude Include="LoaderParams.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Eskeletor.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
@@ -272,11 +287,23 @@
     <ClInclude Include="base64.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Header Files\Layer</Filter>
-    </ClInclude>
     <ClInclude Include="StateParser.h">
       <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Rocket.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketHandler.h">
+      <Filter>Header Files\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderParams.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Crate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files\Level</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

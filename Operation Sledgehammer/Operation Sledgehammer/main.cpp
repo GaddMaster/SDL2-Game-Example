@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 	AllocConsole();
 	FILE* myFile;
 	freopen_s(&myFile, "CON", "w", stdout);
-
     Uint32 frameStart, frameTime;
     
     std::cout << "GAME INITIALIZATION ATTEMPT...\n";
@@ -22,6 +21,7 @@ int main(int argc, char **argv)
         std::cout << "GAME INITIALIZATION - SUCCESS!\n";
         while(TheGame::Instance()->running())//WHILE RUNNING IS TRUE LOOP
         {
+			float ticks = SDL_GetTicks();
             frameStart = SDL_GetTicks();//WE MEASURE HOW LONG GAME IS RUNNING AND USE THAT FOR A OUR UPDATE FUNCTIONALITY 
             
 			//THEGAME::INSTANCE IS A POINTER FOR OUR SINGLETON GAME CLASS

@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "BulletHandler.h"
+#include "RocketHandler.h"
 #include "TileLayer.h"
 
 void CollisionManager::checkPlayerEnemyBulletCollision(Player* pPlayer)
@@ -28,8 +29,8 @@ void CollisionManager::checkPlayerEnemyBulletCollision(Player* pPlayer)
         {
             if(!pPlayer->dying() && !pEnemyBullet->dying())
             {
-                pEnemyBullet->collision();
-                pPlayer->collision();
+                pEnemyBullet->collision(1);
+                pPlayer->collision(1);
             }
         }
         
@@ -70,8 +71,8 @@ void CollisionManager::checkEnemyPlayerBulletCollision(const std::vector<GameObj
             {
                 if(!pObject->dying() && !pPlayerBullet->dying())
                 {
-                    pPlayerBullet->collision();
-                    pObject->collision();
+                    pPlayerBullet->collision(1);
+                    pObject->collision(1);
                 }
                 
             }
@@ -80,6 +81,49 @@ void CollisionManager::checkEnemyPlayerBulletCollision(const std::vector<GameObj
             delete pRect2;
         }
     }
+}
+
+void CollisionManager::checkEnemyPlayerRocketCollision(const std::vector<GameObject *> &objects)
+{
+	for (int i = 0; i < objects.size(); i++)
+	{
+		GameObject* pObject = objects[i];
+
+		for (int j = 0; j < TheRocketHandler::Instance()->getRockets().size(); j++)
+		{
+			if (pObject->type() != std::string("Enemy") || !pObject->updating())
+			{
+				continue;
+			}
+
+			SDL_Rect* pRect1 = new SDL_Rect();
+			pRect1->x = pObject->getPosition().getX();
+			pRect1->y = pObject->getPosition().getY();
+			pRect1->w = pObject->getWidth();
+			pRect1->h = pObject->getHeight();
+
+			Rocket* rocket = TheRocketHandler::Instance()->getRockets()[j];
+
+			SDL_Rect* pRect2 = new SDL_Rect();
+			pRect2->x = rocket->getPosition().getX();
+			pRect2->y = rocket->getPosition().getY();
+			pRect2->w = rocket->getWidth();
+			pRect2->h = rocket->getHeight();
+
+			if (RectRect(pRect1, pRect2))
+			{
+				if (!pObject->dying() && !rocket->dying())
+				{
+					rocket->collision(10);
+					pObject->collision(10);
+				}
+
+			}
+
+			delete pRect1;
+			delete pRect2;
+		}
+	}
 }
 
 void CollisionManager::checkPlayerEnemyCollision(Player* pPlayer, const std::vector<GameObject*> &objects)
@@ -92,12 +136,10 @@ void CollisionManager::checkPlayerEnemyCollision(Player* pPlayer, const std::vec
     
     for(int i = 0; i < objects.size(); i++)
     {
-        if(objects[i]->type() != std::string("Enemy") || !objects[i]->updating())
-        {
-            continue;
-        }
-        
-        SDL_Rect* pRect2 = new SDL_Rect();
+
+        if((objects[i]->type() != std::string("Enemy") || !objects[i]->updating()) && objects[i]->type() != "Crate")continue;
+
+		SDL_Rect* pRect2 = new SDL_Rect();
         pRect2->x = objects[i]->getPosition().getX();
         pRect2->y = objects[i]->getPosition().getY();
         pRect2->w = objects[i]->getWidth();
@@ -105,16 +147,61 @@ void CollisionManager::checkPlayerEnemyCollision(Player* pPlayer, const std::vec
         
         if(RectRect(pRect1, pRect2))
         {
-            if(!objects[i]->dead() && !objects[i]->dying())
-            {
-                pPlayer->collision();
-            }
+			if (objects[i]->type() == "Crate")
+			{
+				pPlayer->getRandomWeapon();
+				objects[i]->kill();
+			}
+			else if(!objects[i]->dead() && !objects[i]->dying())
+			{
+				pPlayer->collision(1);
+			}
         }
         
         delete pRect2;
     }
     
     delete pRect1;
+}
+
+void CollisionManager::checkPlayerCrateCollision(Player* pPlayer, const std::vector<GameObject*> &objects)
+{
+	SDL_Rect* pRect1 = new SDL_Rect();
+	pRect1->x = pPlayer->getPosition().getX();
+	pRect1->y = pPlayer->getPosition().getY();
+	pRect1->w = pPlayer->getWidth();
+	pRect1->h = pPlayer->getHeight();
+
+	for (int i = 0; i < objects.size(); i++)
+	{
+		if (objects[i]->type() != std::string("Enemy") || !objects[i]->updating())
+		{
+			continue;
+		}
+		else if (objects[i]->type() != std::string("Crate"))
+		{
+			SDL_Rect* pRect2 = new SDL_Rect();
+			pRect2->x = objects[i]->getPosition().getX();
+			pRect2->y = objects[i]->getPosition().getY();
+			pRect2->w = objects[i]->getWidth();
+			pRect2->h = objects[i]->getHeight();
+
+			if (RectRect(pRect1, pRect2))
+			{
+				if (!objects[i]->dead() && !objects[i]->dying())
+				{
+					objects[i]->dead();
+					pPlayer->getRandomWeapon();
+				}
+			}
+
+			delete pRect2;
+		}
+
+
+	}
+
+	delete pRect1;
 }
 
 void CollisionManager::checkPlayerTileCollision(Player* pPlayer, const std::vector<TileLayer*>& collisionLayers)
@@ -146,7 +233,7 @@ void CollisionManager::checkPlayerTileCollision(Player* pPlayer, const std::vect
         
         if(tileid != 0)
         {
-            pPlayer->collision();
+            pPlayer->collision(1);
         }
     }
 }

@@ -1,10 +1,4 @@
-//
-//  TextureManager.cpp
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 31/12/2012.
-//  Copyright (c) 2012 shaun mitchell. All rights reserved.
-//
+
 #include "TextureManager.h"
 #include "SDL_image.h"
 #include "SDL.h"
@@ -77,7 +71,6 @@ void TextureManager::drawTile(std::string id, int margin, int spacing, int x, in
     
     SDL_RenderCopyEx(pRenderer, m_textureMap[id], &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
 }
-
 
 void TextureManager::clearTextureMap()
 {

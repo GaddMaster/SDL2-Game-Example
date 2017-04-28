@@ -14,6 +14,7 @@
 #include "Eskeletor.h"
 #include "Level1Boss.h"
 #include "GameOverState.h"
+#include "Crate.h"
 #include <iostream>
 
 using namespace std;
@@ -27,14 +28,12 @@ m_pRenderer(0),
 m_bRunning(false),
 m_pGameStateMachine(0),
 m_playerLives(3),
-m_scrollSpeed(0.8),
+m_scrollSpeed(0.5),
 m_bLevelComplete(false),
 m_bChangingState(false)
 {
     // add some level files to an array
     m_levelFiles.push_back("assets/map1.tmx");
-    m_levelFiles.push_back("assets/map2.tmx");
-	m_levelFiles.push_back("assets/isometric.tmx");
     
     // start at this level
     m_currentLevel =  1;
@@ -95,6 +94,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     TheSoundManager::Instance()->load("assets/DST_ElectroRock.ogg", "music1", SOUND_MUSIC);
     TheSoundManager::Instance()->load("assets/boom.wav", "explode", SOUND_SFX);
     TheSoundManager::Instance()->load("assets/phaser.wav", "shoot", SOUND_SFX);
+	TheSoundManager::Instance()->load("assets/missile.wav", "Missile", SOUND_SFX);
+	TheSoundManager::Instance()->load("assets/laser.wav", "Laser", SOUND_SFX);
     TheSoundManager::Instance()->playMusic("music1", -1);
     
 	//CAN INITIALIZE JOYSTICK IF NEEDED
@@ -111,6 +112,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
     TheGameObjectFactory::Instance()->registerType("Eskeletor", new EskeletorCreator());
     TheGameObjectFactory::Instance()->registerType("Level1Boss", new Level1BossCreator());
+	TheGameObjectFactory::Instance()->registerType("Crate", new CrateCreator());
 
 
     

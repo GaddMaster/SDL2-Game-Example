@@ -14,7 +14,9 @@ class CollisionManager
     
 		void checkPlayerEnemyBulletCollision(Player* pPlayer);
 		void checkPlayerEnemyCollision(Player* pPlayer, const std::vector<GameObject*> &objects);
+		void checkEnemyPlayerRocketCollision(const std::vector<GameObject *> &objects);
 		void checkEnemyPlayerBulletCollision(const std::vector<GameObject*>& objects);
+		void checkPlayerCrateCollision(Player* pPlayer, const std::vector<GameObject*> &objects);
 		void checkPlayerTileCollision(Player* pPlayer, const std::vector<TileLayer*>& collisionLayers);
 };
 

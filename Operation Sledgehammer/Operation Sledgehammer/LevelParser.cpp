@@ -1,10 +1,3 @@
-//
-//  LevelParser.cpp
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 10/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
 
 #include <string>
 #include "LevelParser.h"
@@ -77,7 +70,6 @@ Level* LevelParser::parseLevel(const char *levelFile)
     
     return pLevel;
 }
-
 
 void LevelParser::parseTextures(TiXmlElement* pTextureRoot)
 {
@@ -179,7 +171,6 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, std::vector<Lay
     
     pLayers->push_back(pObjectLayer);
 }
-
 
 void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*> *pLayers, const std::vector<Tileset>* pTilesets, std::vector<TileLayer*> *pCollisionLayers)
 {

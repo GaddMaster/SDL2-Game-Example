@@ -13,11 +13,11 @@ public:
     {
         m_dyingTime = 50;
         m_health = 3;
-        m_moveSpeed = 3;
-        m_bulletFiringSpeed = 50;
+        m_moveSpeed = 2;
+        m_bulletFiringSpeed = 60;
     }
     
-    virtual void collision()
+    virtual void collision(int damage)
     {
         m_health -= 1;
         
@@ -27,11 +27,11 @@ public:
             {
                 TheSoundManager::Instance()->playSound("explode", 0);
                 
-                m_textureID = "largeexplosion";
+                m_textureID = "Explosion64";
                 m_currentFrame = 0;
-                m_numFrames = 9;
-                m_width = 60;
-                m_height = 60;
+                m_numFrames = 14;
+                m_width = 64;
+                m_height = 64;
                 m_bDying = true;
             }
             
@@ -45,10 +45,15 @@ public:
             scroll(TheGame::Instance()->getScrollSpeed());
             m_velocity.setY(m_moveSpeed);
             
-            if(m_bulletCounter == m_bulletFiringSpeed)
+			if (m_bulletCounter == (m_bulletFiringSpeed - 10))
+			{
+				m_currentRow = 1;
+			}
+            else if(m_bulletCounter == m_bulletFiringSpeed)
             {
-                TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY(), 16, 16, "bullet1", 1, Vector2D(-3, 0));
-                TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY(), 16, 16, "bullet1", 1, Vector2D(3, 0));
+				m_currentRow = 0;
+                TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 16, 8, 8, "DroidPulse", 1, Vector2D(-3, 0), 0);
+                TheBulletHandler::Instance()->addEnemyBullet(m_position.getX() + 32, m_position.getY() + 16, 8, 8, "DroidPulse", 1, Vector2D(3, 0), 0);
                 m_bulletCounter = 0;
             }
             m_bulletCounter++;

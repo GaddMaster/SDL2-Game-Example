@@ -26,7 +26,7 @@ class PlayState : public GameState
     
 		static const std::string s_playID;
     
-		CollisionManager m_collisionManager;
+		//CollisionManager m_collisionManager;
     
 		std::vector<GameObject*> m_gameObjects;
     

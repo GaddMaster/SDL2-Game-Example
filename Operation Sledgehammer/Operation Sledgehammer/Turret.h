@@ -1,13 +1,6 @@
-//
-//  Turret.h
-//  SDL Game Programming Book
-//
-//  Created by shaun mitchell on 29/03/2013.
-//  Copyright (c) 2013 shaun mitchell. All rights reserved.
-//
 
-#ifndef __SDL_Game_Programming_Book__Turret__
-#define __SDL_Game_Programming_Book__Turret__
+#ifndef TURRET_H
+#define TURRET_H
 
 #include <iostream>
 #include "GameObjectFactory.h"
@@ -15,66 +8,26 @@
 #include "SoundManager.h"
 #include <math.h>
 #include "Enemy.h"
+#include <ctime>
 
 class Turret : public Enemy
 {
-public:
-    
-    Turret()
-    {
-        m_dyingTime = 1000;
-        m_health = 15;
-        m_bulletFiringSpeed = 50;
-    }
-    
-    virtual ~Turret() {}
+	public:
+		Turret();
+		virtual ~Turret() {}
+		virtual void collision(int damage);
+		virtual void update();
+		//std::string type() { return "Turret"; }
+		virtual void angleControl();//CONTROLS THE TURRETS ROTATION BEHAVIOUR
 
-    virtual void collision()
-    {
-        m_health -= 1;
-        
-        if(m_health == 0)
-        {
-            if(!m_bPlayedDeathSound)
-            {
-                TheSoundManager::Instance()->playSound("explode", 0);
-                
-                m_textureID = "largeexplosion";
-                m_currentFrame = 0;
-                m_numFrames = 9;
-                m_width = 60;
-                m_height = 60;
-                m_bDying = true;
-            }
-            
-        }
-    }
-    
-    virtual void update()
-    {
-        if(!m_bDying)
-        {
-            // we want to scroll this object with the rest
-            scroll(TheGame::Instance()->getScrollSpeed());
-            
-            if(m_bulletCounter == m_bulletFiringSpeed)
-            {
-                TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY(), 16, 16, "bullet2", 1, Vector2D(-3, -3));
-                TheBulletHandler::Instance()->addEnemyBullet(m_position.getX() + 20, m_position.getY(), 16, 16, "bullet2", 1, Vector2D(0, -3));
-                TheBulletHandler::Instance()->addEnemyBullet(m_position.getX() + 40, m_position.getY(), 16, 16, "bullet2", 1, Vector2D(3, -3));
-                m_bulletCounter = 0;
-            }
-            
-            m_bulletCounter++;
-        }
-        else
-        {
-            scroll(TheGame::Instance()->getScrollSpeed());
-            doDyingAnimation();
-        }
-        
-    }
+		//WE NEED TO ROATE THE BULLET SPAWN POINTS TO MATCH TURRETS ANGLE
+		virtual Vector2D rotatePoint(Vector2D pivot, Vector2D point, float angle);
 
+	private:
+		int wait;
+		double rotateTo;
+		bool shoot;
+		Vector2D bulletSpawnPoint;
 };
 
 class TurretCreator : public BaseCreator
@@ -85,5 +38,4 @@ class TurretCreator : public BaseCreator
     }
 };
 
-
-#endif /* defined(__SDL_Game_Programming_Book__Turret__) */
+#endif//DEFINED TURRET_H

@@ -26,7 +26,7 @@ class GameObject
 		virtual void clean()=0;
     
 		// object has collided, handle accordingly
-		virtual void collision() = 0;
+		virtual void collision(int weapon) = 0;
     
 		// get the type of the object
 		virtual std::string type() = 0;
@@ -55,9 +55,15 @@ class GameObject
     
 		// is the object doing a death animation?
 		bool dying() { return m_bDying; }
+
+		//CRATE IS DEAD OR USED
+		void kill() { m_bDead = true; }
     
 		// set whether to update the object or not
 		void setUpdating(bool updating) { m_bUpdating = updating; }
+
+		//SET NUMBER OF FRAMES
+		void setNumFrames(int frames) { m_numFrames = frames; }
         
 	protected:
     
@@ -69,11 +75,14 @@ class GameObject
 						m_height(0),
 						m_currentRow(0),
 						m_currentFrame(0),
+						changeAnimationTick(0),
+						deathAnimationTrapDoor(false),
 						m_bUpdating(false),
 						m_bDead(false),
 						m_bDying(false),
 						m_angle(0),
-						m_alpha(255)
+						m_alpha(255),
+						m_numFrames(1)
 		{
 		}
 
@@ -90,6 +99,8 @@ class GameObject
 		int m_currentRow;
 		int m_currentFrame;
 		int m_numFrames;
+		int changeAnimationTick;//IMPORTANT -> WHEN DYING IS CALLED WE NEED THE CURRENT SDL TICK TO CREATE A FRESH START POINT FOR DEATH ANIMATION TO RUN FROM OTHER WISE THE STARTING FRAME WILL BE RANDOM. WE NEED THIS TO HAVE THE ABIULITY START A FRESH ANIMATION FROM FRAME ONE TO FRAME N. WHEN WE COLLIDE WITH SOMETHING, WE KEEP COLLIDING UNTIL WE RESSURECT ELSEWHERE, SO WE NEED A TRAP DOOR SO MAKE SURE THE FUCNTIONS ONLY CALLS ONCE
+		bool deathAnimationTrapDoor;//NEED TRAP DOORS TO SEPERATE INITIAL COLLISION AND RESPAWN
 		std::string m_textureID;
     
 		// common boolean variables
