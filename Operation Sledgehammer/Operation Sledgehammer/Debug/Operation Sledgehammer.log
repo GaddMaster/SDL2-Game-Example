@@ -1,25 +1,88 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Operation Sledgehammer.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Operation Sledgehammer.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Turret.cpp
+c1xx : fatal error C1083: Cannot open source file: 'Turret.cpp': No such file or directory
+  SDLGameObject.cpp
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(32): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\sdlgameobject.cpp(25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\sdlgameobject.cpp(44): error C2660: 'TextureManager::drawFrame': function does not take 9 arguments
+c:\agp\operation sledgehammer\operation sledgehammer\sdlgameobject.cpp(51): error C2660: 'TextureManager::drawFrame': function does not take 8 arguments
+  RocketHandler.cpp
+c1xx : fatal error C1083: Cannot open source file: 'RocketHandler.cpp': No such file or directory
+  Rocket.cpp
+c1xx : fatal error C1083: Cannot open source file: 'Rocket.cpp': No such file or directory
+  PlayState.cpp
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(32): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\playstate.cpp(11): fatal error C1083: Cannot open include file: 'RocketHandler.h': No such file or directory
   Player.cpp
 c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(32): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
 c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(34): warning C4305: 'initializing': truncation from 'int' to 'bool'
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(161): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(270): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(271): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(272): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(272): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(272): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(288): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(289): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(290): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(290): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(290): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(290): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(305): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(306): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(307): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(307): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(307): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(307): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Operation Sledgehammer.vcxproj -> C:\agp\Operation Sledgehammer\Debug\Operation Sledgehammer.exe
-  Operation Sledgehammer.vcxproj -> C:\agp\Operation Sledgehammer\Debug\Operation Sledgehammer.pdb (Partial PDB)
+c:\agp\operation sledgehammer\operation sledgehammer\player.cpp(7): fatal error C1083: Cannot open include file: 'RocketHandler.h': No such file or directory
+  MenuState.cpp
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(32): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\menustate.cpp(6): error C2039: 's_menuID': is not a member of 'MenuState'
+  c:\agp\operation sledgehammer\operation sledgehammer\menustate.h(6): note: see declaration of 'MenuState'
+c:\agp\operation sledgehammer\operation sledgehammer\menustate.cpp(9): error C2509: 'update': member function not declared in 'MenuState'
+  c:\agp\operation sledgehammer\operation sledgehammer\menustate.h(6): note: see declaration of 'MenuState'
+c:\agp\operation sledgehammer\operation sledgehammer\menustate.cpp(18): error C2509: 'render': member function not declared in 'MenuState'
+  c:\agp\operation sledgehammer\operation sledgehammer\menustate.h(6): note: see declaration of 'MenuState'
+c:\agp\operation sledgehammer\operation sledgehammer\menustate.cpp(29): error C2509: 'onEnter': member function not declared in 'MenuState'
+  c:\agp\operation sledgehammer\operation sledgehammer\menustate.h(6): note: see declaration of 'MenuState'
+c:\agp\operation sledgehammer\operation sledgehammer\menustate.cpp(52): error C2509: 'onExit': member function not declared in 'MenuState'
+  c:\agp\operation sledgehammer\operation sledgehammer\menustate.h(6): note: see declaration of 'MenuState'
+c:\agp\operation sledgehammer\operation sledgehammer\menustate.cpp(66): error C2039: 's_menuToPlay': is not a member of 'MenuState'
+  c:\agp\operation sledgehammer\operation sledgehammer\menustate.h(6): note: see declaration of 'MenuState'
+c:\agp\operation sledgehammer\operation sledgehammer\menustate.cpp(72): error C2039: 's_exitFromMenu': is not a member of 'MenuState'
+  c:\agp\operation sledgehammer\operation sledgehammer\menustate.h(6): note: see declaration of 'MenuState'
+  GameObject.cpp
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(32): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(32): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\roofturret.h(23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\roofturret.h(24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\roofturret.h(25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\glider.h(28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\glider.h(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\glider.h(31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\glider.h(32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\glider.h(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\glider.h(63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\glider.h(73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\shotglider.h(19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\shotglider.h(32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\eskeletor.h(46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\eskeletor.h(55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\eskeletor.h(56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\level1boss.h(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\level1boss.h(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\level1boss.h(79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\level1boss.h(84): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\level1boss.h(85): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\level1boss.h(87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\level1boss.h(88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\game.cpp(17): fatal error C1083: Cannot open include file: 'Crate.h': No such file or directory
+  Enemy.cpp
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(32): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\enemy.cpp(14): error C2084: function 'Enemy::Enemy(void)' already has a body
+  c:\agp\operation sledgehammer\operation sledgehammer\enemy.h(14): note: see previous definition of '{ctor}'
+c:\agp\operation sledgehammer\operation sledgehammer\enemy.cpp(15): error C2614: 'Enemy': illegal member initialization: 'SDLGameObject' is not a base or member
+c:\agp\operation sledgehammer\operation sledgehammer\enemy.cpp(19): error C2509: 'load': member function not declared in 'Enemy'
+  c:\agp\operation sledgehammer\operation sledgehammer\enemy.h(8): note: see declaration of 'Enemy'
+c:\agp\operation sledgehammer\operation sledgehammer\enemy.cpp(26): error C2509: 'draw': member function not declared in 'Enemy'
+  c:\agp\operation sledgehammer\operation sledgehammer\enemy.h(8): note: see declaration of 'Enemy'
+c:\agp\operation sledgehammer\operation sledgehammer\enemy.cpp(31): error C2509: 'update': member function not declared in 'Enemy'
+  c:\agp\operation sledgehammer\operation sledgehammer\enemy.h(8): note: see declaration of 'Enemy'
+c:\agp\operation sledgehammer\operation sledgehammer\enemy.cpp(58): error C2509: 'clean': member function not declared in 'Enemy'
+  c:\agp\operation sledgehammer\operation sledgehammer\enemy.h(8): note: see declaration of 'Enemy'
+  Crate.cpp
+c1xx : fatal error C1083: Cannot open source file: 'Crate.cpp': No such file or directory
+  CollisionManager.cpp
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(32): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\vector2d.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\agp\operation sledgehammer\operation sledgehammer\collisionmanager.cpp(6): fatal error C1083: Cannot open include file: 'RocketHandler.h': No such file or directory
+  Generating Code...

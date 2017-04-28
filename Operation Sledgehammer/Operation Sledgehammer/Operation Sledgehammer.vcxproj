@@ -24,7 +24,9 @@
     <ClCompile Include="BulletHandler.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Crate.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectFactory.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
@@ -36,6 +38,7 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="MenuButton.cpp" />
+    <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="ObjectLayer.cpp" />
     <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -43,6 +46,7 @@
     <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="RocketHandler.cpp" />
     <ClCompile Include="ScrollingBackground.cpp" />
+    <ClCompile Include="SDLGameObject.cpp" />
     <ClCompile Include="ShooterObject.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="StateParser.cpp" />
@@ -91,6 +95,7 @@
     <ClInclude Include="RocketHandler.h" />
     <ClInclude Include="RoofTurret.h" />
     <ClInclude Include="ScrollingBackground.h" />
+    <ClInclude Include="SDLGameObject.h" />
     <ClInclude Include="ShooterObject.h" />
     <ClInclude Include="ShotGlider.h" />
     <ClInclude Include="SoundManager.h" />
@@ -102,23 +107,26 @@
     <ClInclude Include="Turret.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="test.xml" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{23c2861f-904c-453d-baa8-63028c24c937}</ProjectGuid>
     <RootNamespace>Operation_Sledgehammer</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
     <ProjectName>Operation Sledgehammer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -154,12 +162,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\agp\Zlib\include;C:\agp\SDL2Mixer\SDL2_mixer-2.0.1\include;C:\agp\SDL2Image\SDL2Image\include;C:\agp\SDL2\SDL2-2.0.5\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\agp\Zlib\lib;C:\agp\SDL2Mixer\SDL2_mixer-2.0.1\lib\x86;C:\agp\SDL2Image\SDL2Image\lib;C:\agp\SDL2\SDL2-2.0.5\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\agp\Zlib\include;C:\agp\SDL2Mixer\SDL2_mixer-2.0.1\include;C:\agp\SDL2Image\SDL2Image\include;C:\agp\SDL2\SDL2-2.0.5\include;C:\agp\Zlib\include;C:\agp\SDL2Mixer\SDL2_mixer-2.0.1\include;C:\agp\SDL2Image\SDL2Image\include;C:\agp\SDL2\SDL2-2.0.5\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\agp\Zlib\lib;C:\agp\SDL2Mixer\SDL2_mixer-2.0.1\lib\x86;C:\agp\SDL2Image\SDL2Image\lib;C:\agp\SDL2\SDL2-2.0.5\lib\x86;C:\agp\Zlib\lib;C:\agp\SDL2Mixer\SDL2_mixer-2.0.1\lib\x86;C:\agp\SDL2Image\SDL2Image\lib;C:\agp\SDL2\SDL2-2.0.5\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\agp\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\include;C:\agp\zlib128-dll\include;C:\agp\zlib123-dll\include;C:\agp\SDL2Image\SDL2Image\include;C:\agp\SDL2-devel-2.0.5-VC\SDL2-2.0.5\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\agp\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\lib\x86;C:\agp\zlib128-dll\lib;C:\agp\SDL2-devel-2.0.5-VC\SDL2-2.0.5\lib\x86;C:\agp\SDL2Image\SDL2Image\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\agp\Zlib\include;C:\agp\SDL2Mixer\SDL2_mixer-2.0.1\include;C:\agp\SDL2Image\SDL2Image\include;C:\agp\SDL2\SDL2-2.0.5\include;C:\agp\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\include;C:\agp\zlib128-dll\include;C:\agp\zlib123-dll\include;C:\agp\SDL2Image\SDL2Image\include;C:\agp\SDL2-devel-2.0.5-VC\SDL2-2.0.5\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\agp\Zlib\lib;C:\agp\SDL2Mixer\SDL2_mixer-2.0.1\lib\x86;C:\agp\SDL2Image\SDL2Image\lib;C:\agp\SDL2\SDL2-2.0.5\lib\x86;C:\agp\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\lib\x86;C:\agp\zlib128-dll\lib;C:\agp\SDL2-devel-2.0.5-VC\SDL2-2.0.5\lib\x86;C:\agp\SDL2Image\SDL2Image\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
